@@ -1,17 +1,8 @@
-// Todo utility functions. Helper functions for todo-specific logic like filtering and sorting.
-import type { Todo, TodoStatus } from './types';
-
-export function getTodoStatusLabel(status: TodoStatus): string {
-  const labels: Record<TodoStatus, string> = {
-    pending: 'Pending',
-    in_progress: 'In Progress',
-    done: 'Done',
-  };
-  return labels[status];
-}
+// Todo utility functions. Helper functions for todo-specific logic like sorting.
+import type { Todo } from './types';
 
 export function sortTodosByDate(todos: Todo[]): Todo[] {
   return [...todos].sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
   );
 }
