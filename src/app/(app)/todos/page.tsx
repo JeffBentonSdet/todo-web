@@ -4,7 +4,7 @@ import { TodoList } from '@/components/todos/todo-list';
 import { fetchTodos } from '@/features/todos/api';
 
 export default async function TodosPage() {
-  const { data: todos } = await fetchTodos();
+  const todos = await fetchTodos();
 
   return (
     <div className="flex flex-col gap-6">
